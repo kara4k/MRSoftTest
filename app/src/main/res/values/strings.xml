@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MRSoftTest</string>
+    <string name="menu_item_search">Search</string>
+    <string name="menu_item_sort">Sort by name</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/dimen_default"
+              android:background="@color/book_background"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dimen_default"
+        android:layout_marginRight="@dimen/dimen_default"
+        android:layout_marginTop="@dimen/book_text_views_margin"/>
+
+    <TextView
+        android:id="@+id/author_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_default"
+        android:layout_marginRight="@dimen/dimen_default"
+        android:layout_marginTop="@dimen/book_text_views_margin"/>
+
+    <TextView
+        android:id="@+id/genre_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_default"
+        android:layout_marginRight="@dimen/dimen_default"
+        android:layout_marginTop="@dimen/book_text_views_margin"/>
+
+    <TextView
+        android:id="@+id/chapter_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_default"
+        android:layout_marginRight="@dimen/dimen_default"
+        android:layout_marginTop="@dimen/book_text_views_margin"/>
+
+    <TextView
+        android:id="@+id/year_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/book_text_views_margin"
+        android:layout_marginLeft="@dimen/dimen_default"
+        android:layout_marginRight="@dimen/dimen_default"
+        android:layout_marginTop="@dimen/book_text_views_margin"/>
+
+</LinearLayout>
