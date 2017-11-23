@@ -32,7 +32,7 @@ public class BooksPresenter implements SingleObserver<List<Book>> {
     private CompositeDisposable mCompositeDisposable;
 
     @Inject
-    public BooksPresenter() {
+    BooksPresenter() {
         mCompositeDisposable = new CompositeDisposable();
     }
 
@@ -47,7 +47,7 @@ public class BooksPresenter implements SingleObserver<List<Book>> {
     private void subscribe(Callable<Cursor> callable) {
         Single.fromCallable(callable)
                 .map(mBooksMapper)
-                .subscribeOn(Schedulers.computation())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);
     }

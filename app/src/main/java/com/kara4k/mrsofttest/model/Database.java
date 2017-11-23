@@ -13,10 +13,10 @@ import javax.inject.Inject;
 
 public class Database extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "database";
-    public static final int DB_VERSION = 1;
+    private static final String DB_NAME = "database.db";
+    private static final int DB_VERSION = 1;
 
-    public static final String TABLE_NAME = "books";
+    private static final String TABLE_NAME = "books";
 
     public static final String NAME = "name";
     public static final String AUTHOR = "author";
@@ -48,21 +48,15 @@ public class Database extends SQLiteOpenHelper {
     private void insertBooks(SQLiteDatabase sqLiteDatabase) {
         List<Book> books = DefaultBooks.getBooks();
 
-        sqLiteDatabase.beginTransaction();
-        try {
-            for (int i = 0; i < books.size(); i++) {
-                ContentValues cv = getContentValues(books.get(i));
-                sqLiteDatabase.insert(TABLE_NAME, null, cv);
-            }
-        } finally {
-            sqLiteDatabase.endTransaction();
+        for (int i = 0; i < books.size(); i++) {
+            ContentValues cv = getContentValues(books.get(i));
+            sqLiteDatabase.insert(TABLE_NAME, null, cv);
         }
     }
 
     public Cursor getBooks() {
         return this.getWritableDatabase()
-                .query(TABLE_NAME, null, null, null,
-                        null, null, null);
+                .query(TABLE_NAME, null, null, null, null, null, null);
     }
 
     /**
@@ -76,8 +70,7 @@ public class Database extends SQLiteOpenHelper {
                 + AUTHOR + " LIKE '%" + query + "%'";
 
         return this.getReadableDatabase()
-                .query(TABLE_NAME, null, filter, null,
-                        null, null, null);
+                .query(TABLE_NAME, null, filter, null, null, null, null);
     }
 
     @Override
